@@ -16,6 +16,11 @@ Including another URLconf
 from django.conf.urls import url
 from . import views
 
+app_name = 'Meme'
+
 urlpatterns = [
     url(r'^$',views.index, name = 'index'),
+    url(r'^Previous$',views.prevday, name = 'prev'),
+    url(r'^Previous/(?P<dd>[0-9]+)/(?P<mm>[0-9]+)/(?P<yy>[0-9]+)/$',views.pday, name = 'pday'),
+
 ]
